@@ -1,0 +1,19 @@
+[package]
+name = "clap-log-flag"
+version = "0.1.0"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/rust-clique/clap-log-flag"
+documentation = "https://docs.rs/clap-log-flag"
+description = "Add a logger to CLIs using structopt"
+authors = ["Yoshua Wuyts <yoshuawuyts@gmail.com>"]
+readme = "README.md"
+
+[dependencies]
+structopt = "0.2.10"
+env_logger = "0.5.12"
+failure = "0.1.2"
+log = "0.4.3"
+pretty_env_logger = "0.2.4"
+
+[dev-dependencies]
+clap-verbosity-flag = "0.2.0"
