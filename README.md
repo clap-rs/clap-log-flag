@@ -35,6 +35,22 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
+### Output
+```txt
+clap-log-flag 0.1.0
+Yoshua Wuyts <yoshuawuyts@gmail.com>
+Add a logger to CLIs using structopt
+
+USAGE:
+    main [FLAGS]
+
+FLAGS:
+    -h, --help         Prints help information
+    -P, --pretty       Enable pretty printing.
+    -V, --version      Prints version information
+    -v, --verbosity    Pass many times for more log output
+```
+
 ## Installation
 ```sh
 $ cargo add clap-log-flag
