@@ -27,8 +27,16 @@ impl Log {
   /// Initialize `env_logger` and set the log level for the given package.
   ///
   /// All other modules default to printing warnings.
-  pub fn log(&self, level: Level, own_pkg_name: &str) -> Result<(), Error> {
-    let level_filter = level.to_level_filter();
+  pub fn log(
+    &self,
+    level: Option<Level>,
+    own_pkg_name: &str,
+  ) -> Result<(), Error> {
+    let level_filter = match level {
+      Some(level) => level.to_level_filter(),
+      None => return Ok(()),
+    };
+
     init_builder(self.pretty)?
       .filter(Some(&own_pkg_name.replace("-", "_")), level_filter)
       .filter(None, Level::Warn.to_level_filter())
@@ -38,8 +46,11 @@ impl Log {
 
   /// Initialize `env_logger` and set the log level for all packages. No
   /// additional filtering is applied.
-  pub fn log_all(&self, level: Level) -> Result<(), Error> {
-    let level_filter = level.to_level_filter();
+  pub fn log_all(&self, level: Option<Level>) -> Result<(), Error> {
+    let level_filter = match level {
+      Some(level) => level.to_level_filter(),
+      None => return Ok(()),
+    };
 
     init_builder(self.pretty)?
       .filter(None, level_filter)
