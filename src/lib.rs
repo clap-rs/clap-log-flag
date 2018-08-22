@@ -18,7 +18,7 @@ use pretty_env_logger::formatted_builder;
 /// Add log functionality to Structopt.
 #[derive(StructOpt, Debug)]
 pub struct Log {
-  /// Enable pretty printing.
+  /// Enable pretty printing
   #[structopt(short = "P", long = "pretty")]
   pretty: bool,
 }
