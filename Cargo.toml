@@ -9,11 +9,11 @@ authors = ["Yoshua Wuyts <yoshuawuyts@gmail.com>"]
 readme = "README.md"
 
 [dependencies]
-structopt = "0.2.10"
+structopt = "0.3"
 env_logger = "0.5.12"
 failure = "0.1.2"
 log = "0.4.3"
 pretty_env_logger = "0.2.4"
 
 [dev-dependencies]
-clap-verbosity-flag = "0.2.0"
+clap-verbosity-flag = "0.3.0"
